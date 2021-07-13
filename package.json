@@ -30,6 +30,15 @@
     "less": "^4.1.1",
     "less-loader": "^7.3.0",
     "vue-cli-plugin-element": "^1.0.1",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^5.44.0"
+  },
+  "description": "## Project setup ``` npm install ```",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/pigeon-language/vue_shop.git"
+  },
+  "author": "",
+  "license": "ISC"
 }

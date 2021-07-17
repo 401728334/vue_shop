@@ -184,11 +184,11 @@ export default {
     },
     // 编辑角色数据对话框
     async editDialog (id) {
-      this.editDialogVisible = true
       const { data: res } = await this.$http.get(`roles/${id}`)
       // console.log(res)
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.editForm = res.data
+      this.editDialogVisible = true
     },
     // 编辑角色数据
     async editRoles (id) {

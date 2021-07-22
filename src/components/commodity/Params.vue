@@ -190,7 +190,7 @@ export default {
     async getCateList () {
       const { data: res } = await this.$http.get('categories')
       // console.log(res)
-      if (res.meta.status !== 200) return this.$message.error(this.res.msg)
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.catelist = res.data
       // console.log(this.catelist)
     },
@@ -213,11 +213,17 @@ export default {
         this.onlyTableData = []
         return this.$message.error('您选中的不是三级分类')
       }
+      if (this.selectedCateKeys.length === 0) {
+        this.selectedCateKeys = []
+        this.manyTableData = []
+        this.onlyTableData = []
+        return
+      }
       // console.log(this.selectedCateKeys)
       // 根据所选分类的id，和当前所处的面板，获取对应的数据
       const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, { params: { sel: this.activeName } })
       // console.log(res)
-      if (res.meta.status !== 200) return this.$message.error(this.res.msg)
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       // console.log(res.data)
       res.data.forEach(item => {
         item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
@@ -285,7 +291,7 @@ export default {
     },
     // 点击删除按钮，删除参数
     async remove (attrId) {
-      const result = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+      const result = await this.$confirm('此操作将永久删除该参数, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

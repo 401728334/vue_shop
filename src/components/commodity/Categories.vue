@@ -264,7 +264,7 @@ export default {
     },
     // 根据id删除分类
     async removeCate (id) {
-      const result = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+      const result = await this.$confirm('此操作将永久删除该分类, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

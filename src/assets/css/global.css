@@ -24,3 +24,22 @@ html,body, #app {
 .el-cascader-panel .el-cascader-node__postfix {
     top: 10px;
 }
+/* 编辑删除按钮样式 */
+.el-button--mini, .el-button--mini.is-round {
+    padding: 7px 7px;
+}
+/* 步骤条样式 */
+.el-steps {
+    margin: 20px 0px;
+}
+.el-step__title {
+    font-size: 13px;
+}
+/* 复选框组样式 */
+.el-checkbox {
+    margin: 5px 10px;
+}
+/* 富文本编辑器内容高度 */
+.ql-editor {
+    min-height: 300px;
+}
